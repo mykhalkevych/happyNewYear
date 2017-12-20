@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title><%= htmlWebpackPlugin.options.title %></title>
+	<title></title>
 </head>
 <body>
-	<p>Document</p>
+	<div class="christmas-letter">
+		<div class="snow"></div>
+		<div class="overlay"></div>
+		<h2>Marry Christmas <br> and a <br> Happy New Year</h2>
+		<div class="footer">
+			<a href="/">
+				<img src="/img/logotype.png" alt="logo">
+			</a>
+		</div>
+		<div class="audio">
+			<div class="btn-mute"></div>
+		</div>
+
+	</div>
+	<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+  <script>
+  	$(function() {
+  		$(document).on('click', '.btn-mute', function (e) {
+  			$(this).toggleClass('of');
+  		})
+  	});
+  </script>
 </body>
 </html>

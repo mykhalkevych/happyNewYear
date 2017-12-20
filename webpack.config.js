@@ -16,7 +16,28 @@ module.exports = {
 			  	fallback: 'style-loader',
           use: ['css-loader','sass-loader'],
 			  })
-			}
+			},
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+            	name: '[name].[ext]',
+            	outputPath: './img/'
+            }
+          }
+        ]
+      },
+      {
+      test: /\.(svg|eot|ttf|woff|woff2)$/,
+      loader: 'url-loader',
+      options: {
+        limit: 1,
+        name: '[name].[ext]',
+        outputPath: './fonts/'
+      }
+    }
 		]
 	},
 	devServer: {
