@@ -1,20 +1,20 @@
 @font-face {
-    font-family: 'nautilus_pompiliusregular';
-    src: url('../fonts/nautilus.eot') format('embedded-opentype'),
-    			url('../fonts/nautilus.woff2') format('woff2'),
-         url('../fonts/nautilus.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'nautilus_pompiliusregular';
+	src: url('../fonts/nautilus.eot') format('embedded-opentype'),
+	url('../fonts/nautilus.woff2') format('woff2'),
+	url('../fonts/nautilus.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 
 }
 * {
 	box-sizing: border-box;
 }
 body{
-	 background: #1a2159;
-	 font-family: 'nautilus_pompiliusregular';
-	 padding: 10px;
-	 margin: 0;
+	background: #1a2159;
+	font-family: 'nautilus_pompiliusregular';
+	padding: 10px;
+	margin: 0;
 
 }
 .christmas-letter{
@@ -37,10 +37,10 @@ body{
 		letter-spacing: 0;
 		background-image: url('../img/snow.png'), url('../img/snow3.png'), url('../img/snow2.png');
 
-	-webkit-animation: snow 20s linear infinite;
-	-moz-animation: snow 20s linear infinite;
-	-ms-animation: snow 20s linear infinite;
-	animation: snow 20s linear infinite;
+		-webkit-animation: snow 15s linear infinite;
+		-moz-animation: snow 15s linear infinite;
+		-ms-animation: snow 15s linear infinite;
+		animation: snow 15s linear infinite;
 	}
 
 	.overlay{
@@ -88,7 +88,7 @@ body{
 			background: url(../img/mute.png) no-repeat center;
 			cursor: pointer;
 			&.of {
-			background: url(../img/mute-of.png) no-repeat center;
+				background: url(../img/mute-of.png) no-repeat center;
 
 			}
 			&:hover {
@@ -96,27 +96,132 @@ body{
 			}
 		}
 	}
+	.shine, .shine-blue {
+		width: 67px;
+		height: 67px;
+		position: absolute;
+		top: 17vh;
+		left: 24%;
+		z-index: 4;
+		opacity: 0.2;
+		transform: scale(0.5) rotate(0deg);
+		background: url(../img/shine.png) no-repeat center;
+		background-size: cover;
+		animation: shine 3s linear infinite;
+
+		&:nth-child(2) {
+			opacity: 0;
+			left: 53.3%;
+			top: 12.2vh;
+			animation-delay: 1s;
+		}
+		&:nth-child(3) {
+			opacity: 0;
+			left: 57%;
+			top: 28.2vh;
+			animation-delay: 2s;
+		}
+		&:nth-child(4) {
+			opacity: 0;
+			left: 38%;
+			top: 55vh;
+			animation-duration: 2.5s;
+		}
+		&:nth-child(5) {
+			opacity: 0;
+			left: 47.7%;
+			top: 52vh;
+			animation-delay: 0.75s;
+			animation-duration: 3.5s;
+		}
+		&:nth-child(6) {
+			opacity: 0;
+			left: 68%;
+			top: 38vh;
+			animation-delay: 0.5s;
+		}
+		&:nth-child(7) {
+			opacity: 0;
+			left: 62%;
+			top: 56vh;
+			animation-duration: 2.5s;
+		}
+		&:nth-child(8) {
+			opacity: 0;
+			left: 66%;
+			top: 64vh;
+		}
+
+	}
+	.shine-blue {
+		background: url(../img/shine-blue.png) no-repeat center;
+		top: 15vh;
+		left: 15.5%;
+		animation-delay: 0.2s;
+		animation-duration: 3.2s;
+		&:nth-child(2) {
+			opacity: 0;
+			left: 23.3%;
+			top: 25.2vh;
+			animation-delay: 0.5s;
+		}
+		&:nth-child(3) {
+			opacity: 0;
+			left: 15.5%;
+			top: 36.2vh;
+			animation-delay: 1s;
+		}
+		&:nth-child(4) {
+			opacity: 0;
+			left: 13.5%;
+			top: 55vh;
+			animation-duration: 2.2s;
+		}
+		&:nth-child(5) {
+			opacity: 0;
+			left: 24%;
+			top: 50vh;
+			animation-delay: 0.75s;
+			animation-duration: 2.5s;
+		}
+	}
 }
 
 
 /*Кадры анимации*/
 @keyframes snow {
-0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
- 100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+	0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+	100% {background-position: -300px 1000px, 100px 400px, 300px 300px;}
 }
 
 @-moz-keyframes snow {
-0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
-100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+	0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+	100% {background-position: -300px 1000px, 100px 400px, 300px 300px;}
 }
 
 @-webkit-keyframes snow {
-0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
- 50% {background-color:#b4cfe0;}
- 100% {background-position: 500px 1000px, 400px 400px, 300px 300px; background-color:#6b92b9;}
+	0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+	0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+	100% {background-position: -300px 1000px, 100px 400px, 300px 300px;}
 }
 
 @-ms-keyframes snow {
-0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
- 100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+	0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+	100% {background-position: -300px 1000px, 100px 400px, 300px 300px;}
+}
+
+
+@keyframes shine {
+	0% {
+		opacity: 0.4;
+		transform: scale(0.5) rotate(0deg);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(1) rotate(45deg);
+	}
+	100% {
+		opacity: 0.4;
+		transform: scale(0.5) rotate(90deg);
+	}
 }
