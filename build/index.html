@@ -6,14 +6,96 @@
 <link href="./css/style.css" rel="stylesheet"></head>
 <body>
 	<div class="christmas-letter">
+		<div class="snow"></div>
 		<div class="overlay"></div>
-		<h2>Marry Christmas <br> and a <br> Happy New Year</h2>
+		<div class="shines">
+			<span class="shine"></span>
+			<span class="shine"></span>
+			<span class="shine"></span>
+			<span class="shine"></span>
+			<span class="shine"></span>
+			<span class="shine"></span>
+			<span class="shine"></span>
+			<span class="shine"></span>
+		</div>
+		<div class="shine-tree">
+			<span class="shine shine-blue"></span>
+			<span class="shine shine-blue"></span>
+			<span class="shine shine-blue"></span>
+			<span class="shine shine-blue"></span>
+			<span class="shine shine-blue"></span>
+		</div>
+		<h2 class="title">
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<div class="line3"></div>
+
+		</h2>
 		<div class="footer">
 			<a href="/">
-				<img src="img/logotype.png" alt="logo">
+				<img src="./img/logotype.png" alt="logo">
 			</a>
+		</div>
+		<div class="audio">
+			<audio autoplay loop id="audio">
+				<source src="audio.mp3" type="audio/mpeg">
+				</audio>
+				<div class="btn-mute"></div>
 		</div>
 
 	</div>
+	<script
+	src="https://code.jquery.com/jquery-2.2.4.min.js"
+	integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	crossorigin="anonymous"></script>
+	<script>
+		$(function() {
+			var line1 = 'Marry Christmas';
+			var line2 = ' and a';
+			var line3 = 'Happy New Year';
+
+			var spans1 = '<span>' + line1.split('').join('</span><span>') + '</span>';
+			var spans2 = '<span>' + line2.split('').join('</span><span>') + '</span>';
+			var spans3 = '<span>' + line3.split('').join('</span><span>') + '</span>';
+
+			$(spans1).hide().appendTo('.line1').each(function (i) {
+				$(this).delay(100 * i).css({
+					display: 'inline',
+					opacity: 0
+				}).animate({
+					opacity: 1
+				}, 100);
+			});
+			setTimeout(function () {
+				$(spans2).hide().appendTo('.line2').each(function (i) {
+					$(this).delay(100 * i).css({
+						display: 'inline',
+						opacity: 0
+					}).animate({
+						opacity: 1
+					}, 100);
+				});
+			}	, 1200);
+			setTimeout(function () {
+				$(spans3).hide().appendTo('.line3').each(function (i) {
+					$(this).delay(100 * i).css({
+						display: 'inline',
+						opacity: 0
+					}).animate({
+						opacity: 1
+					}, 100);
+				});
+			}	, 2000);
+
+
+
+			var audio = document.getElementById("audio");
+			audio.volume = 0.5;
+			$(document).on('click', '.btn-mute', function (e) {
+				audio.muted = !audio.muted;
+				$(this).toggleClass('of');
+			})
+		});
+	</script>
 <script type="text/javascript" src="./js/main.bundle.js"></script></body>
 </html>

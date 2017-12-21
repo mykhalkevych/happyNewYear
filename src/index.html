@@ -33,11 +33,14 @@
 		</h2>
 		<div class="footer">
 			<a href="/">
-				<img src="/img/logotype.png" alt="logo">
+				<img src="./img/logotype.png" alt="logo">
 			</a>
 		</div>
 		<div class="audio">
-			<div class="btn-mute"></div>
+			<audio autoplay loop id="audio">
+				<source src="audio.mp3" type="audio/mpeg">
+				</audio>
+				<div class="btn-mute"></div>
 		</div>
 
 	</div>
@@ -86,7 +89,10 @@
 
 
 
+			var audio = document.getElementById("audio");
+			audio.volume = 0.5;
 			$(document).on('click', '.btn-mute', function (e) {
+				audio.muted = !audio.muted;
 				$(this).toggleClass('of');
 			})
 		});
